@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "name": "Java",
   "description": "Develop Java applications. Includes the JDK and Java extensions.",
-  "documentationURL": "https://github.com/pwoodworth/devcontainer-templates/tree/main/src/java",
+  "documentationURL": "https://github.com/emergentdotorg/devcontainer-templates/tree/main/src/java",
   "publisher": "Emergent.org Container Spec Maintainers",
-  "licenseURL": "https://github.com/pwoodworth/devcontainer-templates/blob/main/LICENSE",
+  "licenseURL": "https://github.com/emergentdotorg/devcontainer-templates/blob/main/LICENSE",
   "options": {
     "imageVariant": {
       "type": "string",

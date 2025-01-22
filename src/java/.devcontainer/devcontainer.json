@@ -22,10 +22,11 @@
     "type=bind,src=${localEnv:GOOGLE_APPLICATION_CREDENTIALS},dst=/gcloud-creds.json,ro",
     "type=volume,src=devcon-maven-repo,dst=/home/vscode/.m2/repository"
   ],
-  "remoteEnv": {
+  "containerEnv": {
+    "DOTFILES_REPO": "${localEnv:DOTFILES_REPO:}",
     "GOOGLE_APPLICATION_CREDENTIALS": "/gcloud-creds.json",
   },
-  "postCreateCommand": "~/bin/install-dotfiles.sh",
+  "postCreateCommand": " ~/bin/install-dotfiles.sh",
   "customizations": {
     "jetbrains": {
       "backend": "IntelliJ"
