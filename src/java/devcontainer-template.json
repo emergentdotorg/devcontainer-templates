@@ -9,23 +9,23 @@
   "options": {
     "imageVariant": {
       "type": "string",
-      "description": "Specify version of java.",
+      "description": "Java version (use -bookworm, or -bullseye variants on local arm64/Apple Silicon):",
       "proposals": [
         "21-bookworm",
         "17-bookworm",
         "11-bookworm",
         "8-bookworm",
-        "21",
-        "17",
-        "11",
-        "8"
+        "21-bullseye",
+        "17-bullseye",
+        "11-bullseye",
+        "8-bullseye"
       ],
-      "default": "8-bookworm"
+      "default": "21-bullseye"
     },
     "installMaven": {
       "type": "boolean",
-      "description": "Install Maven, a management tool for Java.",
-      "default": "true"
+      "description": "Install Maven, a management tool for Java",
+      "default": "false"
     },
     "installGradle": {
       "type": "boolean",
@@ -33,7 +33,6 @@
       "default": "false"
     }
   },
-  "keywords": [],
   "platforms": ["Java"],
   "optionalPaths": [
     ".github/*"

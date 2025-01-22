@@ -1,35 +1,27 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
   "name": "Java",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".",
-    "args": {
-      "VARIANT": "${templateOption:imageVariant}",
-      "_REMOTE_USER": "vscode"
-    }
-  },
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/java:1-${templateOption:imageVariant}",
+
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "none",
       "installMaven": "${templateOption:installMaven}",
       "installGradle": "${templateOption:installGradle}"
     }
-  },
-  "privileged": true,
-  "workspaceFolder": "/workspace",
-  "workspaceMount": "type=bind,src=${localWorkspaceFolder},dst=/workspace,consistency=cached",
-  "mounts": [
-    "type=bind,src=${localEnv:GOOGLE_APPLICATION_CREDENTIALS},dst=/gcloud-creds.json,ro",
-    "type=volume,src=devcon-maven-repo,dst=/home/vscode/.m2/repository"
-  ],
-  "containerEnv": {
-    "DOTFILES_REPO": "${localEnv:DOTFILES_REPO:}",
-    "GOOGLE_APPLICATION_CREDENTIALS": "/gcloud-creds.json",
-  },
-  "postCreateCommand": " ~/bin/install-dotfiles.sh",
-  "customizations": {
-    "jetbrains": {
-      "backend": "IntelliJ"
-    }
-  },
+  }
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "java -version",
+
+  // Configure tool-specific properties.
+  // "customizations": {},
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
