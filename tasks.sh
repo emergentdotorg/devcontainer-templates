@@ -46,5 +46,5 @@ GITHUB_TOKEN="$CR_PAT" devcontainer templates apply -t ghcr.io/emergentdotorg/de
   -w .
 
 GITHUB_TOKEN="$CR_PAT" devcontainer templates apply \
-  -a '{ "imageVariant": "8-bookworm", "installMaven": true, "installGradle": true, "privileged": false }' \
-  -w . -t ghcr.io/emergentdotorg/devcontainer-templates/java:1.1
+  -a '{ "imageVariant": "8-bookworm", "installMaven": "true", "installGradle": "true" }' \
+  -w . -t ghcr.io/emergentdotorg/devcontainer-templates/java:1.1.2
