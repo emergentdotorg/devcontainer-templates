@@ -1,0 +1,34 @@
+{
+  "name": "Java",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".",
+    "args": {
+      "VARIANT": "${templateOption:imageVariant}",
+      "_REMOTE_USER": "vscode"
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installMaven": "${templateOption:installMaven}",
+      "installGradle": "${templateOption:installGradle}"
+    }
+  },
+  "privileged": true,
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "type=bind,src=${localWorkspaceFolder},dst=/workspace,consistency=cached",
+  "mounts": [
+    "type=bind,src=${localEnv:GOOGLE_APPLICATION_CREDENTIALS},dst=/gcloud-creds.json,ro",
+    "type=volume,src=devcon-maven-repo,dst=/home/vscode/.m2/repository"
+  ],
+  "remoteEnv": {
+    "GOOGLE_APPLICATION_CREDENTIALS": "/gcloud-creds.json",
+  },
+  "postCreateCommand": "~/bin/install-dotfiles.sh",
+  "customizations": {
+    "jetbrains": {
+      "backend": "IntelliJ"
+    }
+  },
+}

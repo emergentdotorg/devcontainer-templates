@@ -1,0 +1,41 @@
+{
+  "id": "java",
+  "version": "1.0.0",
+  "name": "Java",
+  "description": "Develop Java applications. Includes the JDK and Java extensions.",
+  "documentationURL": "https://github.com/pwoodworth/devcontainer-templates/tree/main/src/java",
+  "publisher": "Emergent.org Container Spec Maintainers",
+  "licenseURL": "https://github.com/pwoodworth/devcontainer-templates/blob/main/LICENSE",
+  "options": {
+    "imageVariant": {
+      "type": "string",
+      "description": "Specify version of java.",
+      "proposals": [
+        "21-bookworm",
+        "17-bookworm",
+        "11-bookworm",
+        "8-bookworm",
+        "21",
+        "17",
+        "11",
+        "8"
+      ],
+      "default": "8-bookworm"
+    },
+    "installMaven": {
+      "type": "boolean",
+      "description": "Install Maven, a management tool for Java.",
+      "default": "true"
+    },
+    "installGradle": {
+      "type": "boolean",
+      "description": "Install Gradle, a build automation tool for multi-language software development",
+      "default": "false"
+    }
+  },
+  "keywords": [],
+  "platforms": ["Java"],
+  "optionalPaths": [
+    ".github/*"
+  ]
+}
