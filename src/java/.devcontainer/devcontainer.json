@@ -11,7 +11,7 @@
       "installMaven": "${templateOption:installMaven}",
       "installGradle": "${templateOption:installGradle}"
     }
-  }
+  },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
@@ -19,9 +19,24 @@
   // Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": "java -version",
 
-  // Configure tool-specific properties.
-  // "customizations": {},
-
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
+
+  // "privileged": "${templateOption:privileged}",
+  "mounts": [
+    "type=bind,src=${localEnv:GOOGLE_APPLICATION_CREDENTIALS:/gcloud-creds.json},dst=/gcloud-creds.json,ro",
+    // "type=volume,src=devcon-maven-repo,dst=/home/vscode/.m2/repository"
+    "type=tmpfs,dst=/home/vscode/.m2/repository"
+  ],
+
+  "remoteEnv": {
+    "GOOGLE_APPLICATION_CREDENTIALS": "/gcloud-creds.json",
+  },
+
+  // Configure tool-specific properties.
+  "customizations": {
+    "jetbrains": {
+      "backend": "${templateOption:jetbrainsBackend}"
+    }
+  }
 }
