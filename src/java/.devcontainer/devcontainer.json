@@ -22,7 +22,7 @@
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
 
-  // "privileged": "${templateOption:privileged}",
+  // "privileged": false,
   "mounts": [
     "type=bind,src=${localEnv:GOOGLE_APPLICATION_CREDENTIALS:/gcloud-creds.json},dst=/gcloud-creds.json,ro",
     // "type=volume,src=devcon-maven-repo,dst=/home/vscode/.m2/repository"

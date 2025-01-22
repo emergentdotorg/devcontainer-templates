@@ -1,6 +1,6 @@
 {
   "id": "java",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "name": "Java",
   "description": "Develop Java applications. Includes the JDK and Java extensions.",
   "documentationURL": "https://github.com/emergentdotorg/devcontainer-templates/tree/main/src/java",
@@ -45,11 +45,6 @@
         "WebStorm"
       ],
       "default": "IntelliJ"
-    },
-    "privileged": {
-      "type": "boolean",
-      "description": "Enabled privileged execution for example when SELinux is enabled",
-      "default": "false"
     }
   },
   "platforms": ["Java"],
